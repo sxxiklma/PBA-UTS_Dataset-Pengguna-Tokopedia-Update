@@ -1,0 +1,32 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.nav-link:hover{
+    color: aqua;
+}
+.card {
+    width: 250px;
+}
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+h2{
+    margin-top: 25px;
+}
+
+.hero{
+    display: flex;
+}
+
+.col{
+    margin: auto;
+}
+
+.card img{
+    width: max-content;
+    height: 200px;
+}
