@@ -1,0 +1,57 @@
+{
+  "project_name": "NLP Processing Pipeline",
+  "version": "1.0.0",
+  "description": "Complete NLP pipeline for text analysis and classification",
+  
+  "data": {
+    "input_dir": "data",
+    "output_dir": "output",
+    "models_dir": "models"
+  },
+  
+  "sentiment_analysis": {
+    "method": "textblob",
+    "alternative_method": "lexicon",
+    "languages": ["english", "indonesian"],
+    "output_format": "excel"
+  },
+  
+  "feature_extraction": {
+    "bow": {
+      "max_features": 1000,
+      "min_df": 2,
+      "max_df": 0.95
+    },
+    "tfidf": {
+      "max_features": 1000,
+      "min_df": 2,
+      "max_df": 0.95,
+      "ngram_range": [1, 2]
+    }
+  },
+  
+  "text_classification": {
+    "algorithms": ["naive_bayes", "svm", "logistic_regression", "random_forest"],
+    "test_size": 0.2,
+    "random_state": 42,
+    "metrics": ["accuracy", "precision", "recall", "f1"]
+  },
+  
+  "modeling": {
+    "cross_validation_folds": 5,
+    "random_state": 42,
+    "hyperparameter_tuning": true,
+    "save_best_model": true
+  },
+  
+  "ner": {
+    "model": "en_core_web_sm",
+    "entity_types": ["PERSON", "ORG", "GPE", "DATE", "LOCATION"],
+    "pos_tagging": true
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "log_file": "pipeline.log"
+  }
+}
